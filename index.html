@@ -6,50 +6,40 @@
     <title>Makan Kepong & Menjalara</title>
     <style>
       :root {
-        --page-bg: #d8f5ea;
-        --soft-yellow: #f7da5c;
-        --card-bg: #fffdfd;
-        --text: #2d1d3b;
-        --muted: #7a5c78;
-        --purple: #7b45d6;
-        --pink: #e83d8d;
-        --pink-strong: #c72577;
-        --orange: #f9a51d;
-        --orange-deep: #ef7c00;
-        --green: #1eb987;
-        --green-deep: #0d9a76;
-        --red: #e94161;
-        --red-deep: #cb214d;
-        --blue: #5d6af3;
-        --blue-deep: #3d4fc8;
-        --shadow: rgba(64, 27, 93, 0.18);
+        --bg: #dff6ea;
+        --soft-yellow: #f6dc5e;
+        --card: #ffffff;
+        --ink: #2d1e3c;
+        --muted: #6a5877;
+        --purple: #7444d8;
+        --pink: #e53e87;
+        --orange: #f7a52a;
+        --green: #20b680;
+        --red: #ea456c;
+        --blue: #5b5de2;
+        --shadow: rgba(50, 21, 67, 0.18);
       }
 
       * { box-sizing: border-box; }
-
-      html, body {
-        margin: 0;
-        min-height: 100%;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(180deg, #a1e7d7 0%, #f2e9b7 100%);
-        color: var(--text);
-      }
-
+      html { scroll-behavior: smooth; }
       body {
-        display: flex;
-        justify-content: center;
-        padding: 18px 18px 36px;
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(180deg, #a9ebd8 0%, #f7eeb1 100%);
+        color: var(--ink);
       }
 
       .page {
-        width: min(100%, 760px);
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 18px 18px 48px;
       }
 
       .hero {
-        background: linear-gradient(135deg, #6d48dd 0%, #d04db2 55%, #ef7c3b 100%);
+        background: linear-gradient(135deg, #7046d8 0%, #d949b8 52%, #f28c3f 100%);
         border-radius: 28px;
-        padding: 20px 22px 16px;
-        box-shadow: 0 10px 24px var(--shadow);
+        box-shadow: 0 12px 24px var(--shadow);
+        padding: 22px 22px 16px;
       }
 
       .brand {
@@ -59,198 +49,214 @@
         margin-bottom: 8px;
       }
 
-      .brand-mark {
+      .brand-badge {
         width: 42px;
         height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 14px;
-        background: rgba(255,255,255,0.18);
-        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+        display: grid;
+        place-items: center;
         font-size: 30px;
-        transform: translateY(-2px);
+        border-radius: 12px;
+        background: rgba(255,255,255,0.18);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28);
       }
 
       h1 {
         margin: 0;
-        font-weight: 900;
-        font-size: clamp(2rem, 4vw, 3rem);
-        letter-spacing: -0.06em;
-        line-height: 1.05;
         color: #fff;
-        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.06em;
+        font-weight: 900;
+        text-shadow: 2px 2px 0 rgba(0,0,0,0.12);
       }
 
-      .brand strong {
-        color: #ffe364;
-      }
+      h1 strong { color: #ffe46d; }
 
       .subtitle {
-        margin: 10px 0 18px;
-        font-size: clamp(1.05rem, 2.2vw, 1.4rem);
-        font-weight: 700;
         color: #fff;
+        font-weight: 800;
+        font-size: clamp(1.1rem, 2vw, 1.45rem);
+        margin: 8px 0 18px;
       }
 
       .search-row {
         display: flex;
         align-items: center;
-        gap: 16px;
-        background: rgba(255, 255, 255, 0.92);
-        border: 3px solid rgba(255,255,255,0.75);
+        gap: 14px;
+        background: rgba(255,255,255,0.95);
+        border: 3px solid rgba(255,255,255,0.8);
         border-radius: 18px;
-        padding: 10px 14px 10px 18px;
+        padding: 12px 14px 12px 18px;
       }
 
       .search-input {
         flex: 1;
-        border: none;
+        border: 0;
+        outline: none;
         background: transparent;
         font: inherit;
-        font-size: 1.15rem;
-        color: var(--text);
-        outline: none;
+        font-size: 1.14rem;
+        color: var(--ink);
       }
 
       .search-input::placeholder {
-        color: #624d67;
-        opacity: 0.9;
+        color: #5c4c67;
       }
 
       .surprise {
-        flex-shrink: 0;
-        background: linear-gradient(180deg, #f9ef6d, #f4d75a);
-        border: none;
-        border-radius: 16px;
-        padding: 14px 22px;
-        color: var(--text);
+        border: 0;
+        background: linear-gradient(180deg, #f8ea78, #f4d75b);
+        color: var(--ink);
         font: inherit;
         font-weight: 900;
-        font-size: 1.08rem;
+        border-radius: 16px;
+        padding: 12px 20px;
+        box-shadow: 0 4px 0 rgba(92,66,0,0.18);
         cursor: pointer;
-        box-shadow: 0 4px 0 rgba(87, 54, 8, 0.18);
-        display: flex;
-        align-items: center;
-        gap: 8px;
       }
 
-      .section-title {
+      .title {
         margin: 30px 0 18px;
-        font-size: clamp(2rem, 4vw, 2.4rem);
-        font-weight: 900;
-        letter-spacing: -0.05em;
-        color: var(--text);
-      }
-
-      .meal-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .meal-card {
-        min-height: 200px;
-        border-radius: 26px;
-        padding: 22px 20px 16px;
-        color: white;
-        box-shadow: 0 8px 18px rgba(59, 32, 62, 0.15);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-      }
-
-      .meal-card:nth-child(1) {
-        background: linear-gradient(135deg, #f6b83f 0%, #f29d1d 100%);
-      }
-
-      .meal-card:nth-child(2) {
-        background: linear-gradient(135deg, #0dbd8f 0%, #118d76 100%);
-      }
-
-      .meal-card:nth-child(3) {
-        background: linear-gradient(135deg, #e9496c 0%, #ce2654 100%);
-      }
-
-      .meal-card:nth-child(4) {
-        background: linear-gradient(135deg, #5a69e9 0%, #3b3ab8 100%);
-      }
-
-      .card-icon {
-        font-size: 2.3rem;
-        line-height: 1;
-        margin-bottom: 18px;
-      }
-
-      .meal-name {
-        margin: 0;
-        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        font-size: clamp(2rem, 4vw, 2.5rem);
         line-height: 1.1;
         font-weight: 900;
         letter-spacing: -0.05em;
       }
 
-      .meal-sub {
-        margin-top: 10px;
-        font-size: clamp(1.05rem, 2vw, 1.25rem);
-        opacity: 0.95;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .meal {
+        border-radius: 26px;
+        min-height: 220px;
+        padding: 18px 20px 16px;
+        color: white;
+        box-shadow: 0 10px 18px rgba(64,30,70,0.12);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .meal:nth-child(1) {
+        background: linear-gradient(135deg, #f4ae38 0%, #f79a19 100%);
+      }
+      .meal:nth-child(2) {
+        background: linear-gradient(135deg, #11b88f 0%, #118f72 100%);
+      }
+      .meal:nth-child(3) {
+        background: linear-gradient(135deg, #ee4a69 0%, #cd2658 100%);
+      }
+      .meal:nth-child(4) {
+        background: linear-gradient(135deg, #5d67eb 0%, #3d42b6 100%);
+      }
+
+      .icon { font-size: 2.5rem; margin-bottom: 14px; }
+      .meal h3 {
+        margin: 0;
+        font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+        font-weight: 900;
+      }
+      .meal p {
+        margin: 10px 0 0;
+        font-size: clamp(1.02rem, 2vw, 1.22rem);
         font-weight: 600;
+        opacity: 0.96;
       }
-
-      .meal-count {
+      .badge {
         margin-top: auto;
-        display: inline-flex;
         align-self: flex-start;
+        display: inline-block;
         background: rgba(255,255,255,0.18);
+        padding: 7px 12px;
         border-radius: 999px;
-        padding: 7px 12px 8px;
-        font-size: 1.05rem;
-        font-weight: 700;
+        font-weight: 800;
+        font-size: 0.98rem;
       }
 
-      .all-btn {
+      .cta {
         display: block;
         width: fit-content;
         margin: 26px auto 12px;
-        background: linear-gradient(180deg, #d73b9d, #b81a82);
-        color: #fff;
+        background: linear-gradient(180deg, #d53d97, #b91f85);
+        color: white;
         text-decoration: none;
-        font-weight: 900;
-        font-size: clamp(1.18rem, 2vw, 1.5rem);
-        letter-spacing: -0.04em;
-        padding: 16px 42px;
+        padding: 16px 34px;
         border-radius: 999px;
-        box-shadow: 0 8px 18px rgba(121, 26, 96, 0.25);
+        font-weight: 900;
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+        letter-spacing: -0.04em;
+        box-shadow: 0 8px 18px rgba(126,25,93,0.25);
       }
 
-      .footnote {
+      .note {
         text-align: center;
-        margin-top: 14px;
+        color: var(--ink);
+        font-weight: 700;
         font-size: 0.98rem;
         line-height: 1.5;
+        margin-top: 8px;
+      }
+
+      .restaurants {
+        margin-top: 28px;
+      }
+
+      .restaurant-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .restaurant-card {
+        background: rgba(255,255,255,0.9);
+        border: 1px solid rgba(97, 62, 107, 0.12);
+        border-radius: 18px;
+        padding: 16px 18px;
+        box-shadow: 0 5px 12px rgba(77,46,82,0.08);
+      }
+
+      .restaurant-card h4 {
+        margin: 0 0 6px;
+        font-size: 1.14rem;
+        font-weight: 900;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .tag {
+        font-size: 0.74rem;
         font-weight: 700;
-        color: var(--text);
+        background: #fcebf6;
+        color: #8d3671;
+        border-radius: 999px;
+        padding: 5px 8px;
+      }
+
+      .restaurant-card a {
+        display: inline-block;
+        margin-top: 10px;
+        font-weight: 800;
+        color: #d93c96;
+        text-decoration: none;
       }
 
       @media (max-width: 620px) {
-        .hero {
-          padding: 18px 16px 14px;
-        }
-
         .search-row {
           flex-direction: column;
           align-items: stretch;
           padding: 12px;
         }
-
-        .surprise {
-          width: 100%;
-          justify-content: center;
-        }
-
-        .meal-grid {
-          grid-template-columns: 1fr;
-        }
+        .surprise { width: 100%; }
+        .grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -258,54 +264,335 @@
     <div class="page">
       <header class="hero">
         <div class="brand">
-          <div class="brand-mark">🍜</div>
+          <div class="brand-badge">🍜</div>
           <h1>Makan <strong>Kepong</strong> &amp; Menjalara</h1>
         </div>
         <div class="subtitle">Pick a time of day, then a cuisine. No fuss!</div>
 
-        <div class="search-row" aria-label="Search bar">
+        <div class="search-row">
           <input class="search-input" type="text" placeholder="Search any place or food..." />
           <button class="surprise" type="button">🎲 Surprise me</button>
         </div>
       </header>
 
-      <h2 class="section-title">When are you eating?</h2>
+      <h2 class="title">When are you eating?</h2>
 
-      <section class="meal-grid">
-        <article class="meal-card">
-          <div class="card-icon">🥐</div>
-          <h3 class="meal-name">Breakfast</h3>
-          <div class="meal-sub">Kopitiam, noodles, dim sum, coffee</div>
-          <div class="meal-count">89 places</div>
+      <section class="grid" aria-label="Meal type options">
+        <article class="meal">
+          <div class="icon">🥐</div>
+          <h3>Breakfast</h3>
+          <p>Kopitiam, noodles, dim sum, coffee</p>
+          <span class="badge">89 places</span>
         </article>
 
-        <article class="meal-card">
-          <div class="card-icon">🍱</div>
-          <h3 class="meal-name">Lunch</h3>
-          <div class="meal-sub">Rice, noodles and set meals</div>
-          <div class="meal-count">209 places</div>
+        <article class="meal">
+          <div class="icon">🍱</div>
+          <h3>Lunch</h3>
+          <p>Rice, noodles and set meals</p>
+          <span class="badge">209 places</span>
         </article>
 
-        <article class="meal-card">
-          <div class="card-icon">🍽️</div>
-          <h3 class="meal-name">Dinner</h3>
-          <div class="meal-sub">Sit-down meals, hotpot, seafood</div>
-          <div class="meal-count">178 places</div>
+        <article class="meal">
+          <div class="icon">🍽️</div>
+          <h3>Dinner</h3>
+          <p>Sit-down meals, hotpot, seafood</p>
+          <span class="badge">178 places</span>
         </article>
 
-        <article class="meal-card">
-          <div class="card-icon">🌙</div>
-          <h3 class="meal-name">Supper</h3>
-          <div class="meal-sub">Late-night cravings</div>
-          <div class="meal-count">67 places</div>
+        <article class="meal">
+          <div class="icon">🌙</div>
+          <h3>Supper</h3>
+          <p>Late-night cravings</p>
+          <span class="badge">67 places</span>
         </article>
       </section>
 
-      <a class="all-btn" href="#">🍽 See all 250 places</a>
+      <a class="cta" href="#restaurants">🍽 See all 250 places</a>
+      <div class="note">Ratings from Google Maps. Meal times are estimates from opening hours, so check before you go!</div>
 
-      <div class="footnote">
-        Ratings from Google Maps. Meal times are estimates from opening hours, so check before you go!
-      </div>
+      <section class="restaurants" id="restaurants">
+        <div class="restaurant-list">
+          <article class="restaurant-card">
+            <h4>Burger Hood Bandar Menjalara</h4>
+            <div class="tags">
+              <span class="tag">⭐ 5.0</span>
+              <span class="tag">🍔 Western</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger%20Hood%20Bandar%20Menjalara%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Dong Sao 东嫂面档</h4>
+            <div class="tags">
+              <span class="tag">⭐ 5.0</span>
+              <span class="tag">☕ Kopitiam</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Dong%20Sao%20%E4%B8%9C%E5%AB%82%E9%9D%A2%E6%A1%A3%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Feng Fu 豐富美食魚王館</h4>
+            <div class="tags">
+              <span class="tag">⭐ 5.0</span>
+              <span class="tag">🥡 Chinese</span>
+              <span class="tag">📍 Metro Perdana</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Feng%20Fu%20%E8%B1%90%E5%AF%8C%E7%BE%8E%E9%A3%9F%E9%AD%9A%E7%8E%8B%E9%A4%A8%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Jie Di Lia Spicy Hotpot</h4>
+            <div class="tags">
+              <span class="tag">⭐ 5.0</span>
+              <span class="tag">🍲 Hotpot</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Jie%20Di%20Lia%20Spicy%20Hotpot%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Pak.Tao.Lou (Uncle Popiah)</h4>
+            <div class="tags">
+              <span class="tag">⭐ 5.0</span>
+              <span class="tag">☕ Kopitiam</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Pak.Tao.Lou%20%28Uncle%20Popiah%29%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Sotongpaku</h4>
+            <div class="tags">
+              <span class="tag">⭐ 5.0</span>
+              <span class="tag">☕ Kopitiam</span>
+              <span class="tag">📍 Old Kepong</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Sotongpaku%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>YanCha</h4>
+            <div class="tags">
+              <span class="tag">⭐ 5.0</span>
+              <span class="tag">🧋 Cafe</span>
+              <span class="tag">📍 AEON Metro Prima</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=YanCha%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Yip Kei Seafood 葉记海鲜</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.9</span>
+              <span class="tag">🦀 Seafood</span>
+              <span class="tag">📍 Jalan Prima</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Yip%20Kei%20Seafood%20%E8%91%89%E8%AE%B0%E6%B5%B7%E9%B2%9C%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Luckypot 幸湘菜馆</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.9</span>
+              <span class="tag">🥡 Chinese</span>
+              <span class="tag">📍 Metro Perdana</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Luckypot%20%E5%B9%B8%E6%B9%98%E8%8F%9C%E9%A6%86%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>101 Heritage</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.5</span>
+              <span class="tag">🍛 Malay</span>
+              <span class="tag">📍 Metro Perdana</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=101%20Heritage%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Good Taste 好好食面馆</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.8</span>
+              <span class="tag">🍜 Noodles</span>
+              <span class="tag">📍 Kepong'Gi Square</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Good%20Taste%20%E5%A5%BD%E5%A5%BD%E9%A3%9F%E9%9D%A2%E9%A6%86%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Naughty Root</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.9</span>
+              <span class="tag">🥬 Vegetarian</span>
+              <span class="tag">📍 Laman Rimbunan</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Naughty%20Root%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Menya Sankodo 麺や三光堂</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.6</span>
+              <span class="tag">🍣 Japanese</span>
+              <span class="tag">📍 AEON Metro Prima</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Menya%20Sankodo%20%E9%BA%BA%E3%82%84%E4%B8%89%E5%85%89%E5%A0%82%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Restoran Thambi Corner</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.6</span>
+              <span class="tag">🫓 Indian</span>
+              <span class="tag">📍 Metro Perdana</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Restoran%20Thambi%20Corner%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Heng Long Bak Kut Teh</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.9</span>
+              <span class="tag">🥡 Chinese</span>
+              <span class="tag">📍 Metro Perdana</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Heng%20Long%20Bak%20Kut%20Teh%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Korean BBQ Mr. Lim</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.9</span>
+              <span class="tag">🥩 Korean</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Korean%20BBQ%20Mr.%20Lim%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Deewow Restaurant</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.5</span>
+              <span class="tag">🥟 Taiwanese</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Deewow%20Restaurant%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Inside Scoop Menjalara</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.5</span>
+              <span class="tag">🍧 Dessert</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Inside%20Scoop%20Menjalara%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Starry Sky Marina Hot Pot</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.9</span>
+              <span class="tag">🍲 Hotpot</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Starry%20Sky%20Marina%20Hot%20Pot%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Teahaus Menjalara</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.9</span>
+              <span class="tag">🍣 Japanese</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Teahaus%20Menjalara%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Grandma Ong 王奶奶面粉粿</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.7</span>
+              <span class="tag">🍧 Dessert</span>
+              <span class="tag">📍 Laman Rimbunan</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Grandma%20Ong%20%E7%8E%8B%E5%A5%B6%E5%A5%B6%E9%9D%A2%E7%B2%89%E7%B2%BF%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Yat Gor Claypot Rice 一哥煲仔饭</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.3</span>
+              <span class="tag">🥡 Chinese</span>
+              <span class="tag">📍 Kepong'Gi Square</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Yat%20Gor%20Claypot%20Rice%20%C4%B0%20%E5%AE%9D%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Manjoe Taiwanese Dumplings</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.4</span>
+              <span class="tag">🥟 Taiwanese</span>
+              <span class="tag">📍 AEON Metro Prima</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Manjoe%20Taiwanese%20Dumplings%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>ZUS Coffee</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.5</span>
+              <span class="tag">🧋 Cafe</span>
+              <span class="tag">📍 AEON Metro Prima</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=ZUS%20Coffee%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>TalkCrab</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.8</span>
+              <span class="tag">🦀 Seafood</span>
+              <span class="tag">📍 Old Kepong</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=TalkCrab%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>QHouse 港湾茶餐厅</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.7</span>
+              <span class="tag">🥡 Chinese</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=QHouse%20%E6%B8%AF%E6%B9%BE%E8%8C%B6%E9%A4%90%E5%8E%85%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Lim Authentic Tasty Noodles 林家好味馆</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.5</span>
+              <span class="tag">🍜 Noodles</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Lim%20Authentic%20Tasty%20Noodles%20%E6%9E%97%E5%AE%B6%E5%A5%BD%E5%91%B3%E9%A6%86%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+
+          <article class="restaurant-card">
+            <h4>Sushi Hiro Menjalara</h4>
+            <div class="tags">
+              <span class="tag">⭐ 4.8</span>
+              <span class="tag">🍣 Japanese</span>
+              <span class="tag">📍 Bandar Menjalara</span>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Sushi%20Hiro%20Menjalara%20Kepong%20Kuala%20Lumpur" target="_blank" rel="noopener">Open in Maps →</a>
+          </article>
+        </div>
+      </section>
     </div>
   </body>
 </html>
